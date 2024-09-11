@@ -14,7 +14,7 @@ jobs:
       - name: Login to dockerhub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
       - name: Build docker image
-        run: docker build -t arunkarthik1403/arunkarthik1403/react_ci_cd .
+        run: docker build -t arunkarthik1403/react_ci_cd .
       - name: Publish Image to docker hub
         run: docker push arunkarthik1403/react_ci_cd:latest
 
@@ -23,8 +23,8 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: pull image from docker hub
-        run: docker pull arunkarthik1403/arunkarthik1403/react_ci_cd:latest
+        run: docker pull arunkarthik1403/react_ci_cd:latest
       - name: Delete old contaier
         run: docker rm -f reactjs-app-container
       - name: Run Docker Container
-        run: docker run -d -p 3000:80 --name reactjs-app-container arunkarthik1403/arunkarthik1403/react_ci_cd
+        run: docker run -d -p 3000:80 --name reactjs-app-container arunkarthik1403/react_ci_cd
