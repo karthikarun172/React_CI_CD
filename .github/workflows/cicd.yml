@@ -16,7 +16,7 @@ jobs:
       - name: Build docker image
         run: docker build -t arunkarthik1403/arunkarthik1403/react_ci_cd .
       - name: Publish Image to docker hub
-        run: docker push arunkarthik1403/arunkarthik1403/react_ci_cd:latest
+        run: docker push arunkarthik1403/react_ci_cd:latest
 
   deploy:
     needs: build
